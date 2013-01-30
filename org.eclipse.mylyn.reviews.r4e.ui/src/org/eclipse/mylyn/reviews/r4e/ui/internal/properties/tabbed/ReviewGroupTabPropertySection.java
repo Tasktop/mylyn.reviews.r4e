@@ -459,7 +459,9 @@ public class ReviewGroupTabPropertySection extends ModelElementTabPropertySectio
 		}
 		fAvailableComponents.updateButtons();
 
-		fDefaultEntryCriteriaText.setText(modelGroup.getDefaultEntryCriteria());
+		if (null != modelGroup.getDefaultEntryCriteria()) {
+			fDefaultEntryCriteriaText.setText(modelGroup.getDefaultEntryCriteria());
+		}
 
 		final List<R4EUIRuleSet> uiRuleSets = ((R4EUIRootElement) ((R4EUIReviewGroup) fProperties.getElement()).getParent()).getRuleSets();
 		final List<String> tmpRuleSetLocations = new ArrayList<String>();
